@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://btamp27jhjrtj"]
+[gd_scene load_steps=7 format=3 uid="uid://btamp27jhjrtj"]
 
 [ext_resource type="Script" uid="uid://b04yepgmue5f8" path="res://Scripts/main.gd" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://dqppfkgr8w5kr" path="res://Resources/Icons/plus-solid.svg" id="2_bo1nx"]
 [ext_resource type="AudioStream" uid="uid://djkvvvyl5h337" path="res://Resources/Sounds/GlitterSFX-cut.mp3" id="3_8gbba"]
+[ext_resource type="Theme" uid="uid://jl4g7k5tpoup" path="res://Resources/Themes/ItemTheme.tres" id="4_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://dxkitmov6u7fi" path="res://Resources/Icons/trash-can-solid.svg" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://gf5hmi5w4ttt" path="res://Scripts/remove_button.gd" id="6_21xkr"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jjvhh"]
 streams_count = 1
@@ -14,57 +16,41 @@ script = ExtResource("1_jjgbg")
 [node name="Center" type="Node2D" parent="."]
 position = Vector2(540, 0)
 
-[node name="Title" type="Label" parent="Center"]
+[node name="NewTitle" type="RichTextLabel" parent="Center"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -379.5
-offset_top = 150.0
-offset_right = 379.5
-offset_bottom = 289.0
+offset_left = -400.0
+offset_top = 225.0
+offset_right = 400.0
+offset_bottom = 425.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 110
-text = "DECISION APP"
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_font_size = 115
+bbcode_enabled = true
+text = "[center][b]DECISION APP[/b][/center]"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="InsertGroup" type="Node2D" parent="Center"]
-position = Vector2(0, 400)
-
-[node name="Button" type="Button" parent="Center/InsertGroup"]
-offset_left = 200.0
-offset_right = 275.0
-offset_bottom = 75.0
-theme_override_font_sizes/font_size = 50
-theme_override_icons/icon = ExtResource("2_bo1nx")
-icon_alignment = 1
-expand_icon = true
-
-[node name="TextEdit" type="TextEdit" parent="Center/InsertGroup"]
-offset_left = -275.0
-offset_right = 125.0
-offset_bottom = 75.0
-theme_override_colors/background_color = Color(0.564706, 0.890196, 0.603922, 1)
-theme_override_colors/font_placeholder_color = Color(0.313726, 0.313726, 0.313726, 0.811765)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 46
-placeholder_text = "Option..."
 
 [node name="Answer" type="RichTextLabel" parent="Center"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -360.0
-offset_top = 550.0
+offset_top = 475.0
 offset_right = 360.0
-offset_bottom = 650.0
+offset_bottom = 625.0
 grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/bold_font_size = 76
 bbcode_enabled = true
 text = "[center][b]. . .[/b][/center]"
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GlitterSFX" type="AudioStreamPlayer2D" parent="Center/Answer"]
 position = Vector2(360, 0)
@@ -82,6 +68,67 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="item1" type="HBoxContainer" parent="Center/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Center/ScrollContainer/VBoxContainer/item1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_jjvhh")
+placeholder_text = "Option 1 . . ."
+
+[node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item1"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_icons/icon = ExtResource("5_kry3j")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_21xkr")
+
+[node name="item2" type="HBoxContainer" parent="Center/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Center/ScrollContainer/VBoxContainer/item2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_jjvhh")
+placeholder_text = "Option 2 . . ."
+
+[node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item2"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_icons/icon = ExtResource("5_kry3j")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_21xkr")
+
+[node name="item3" type="HBoxContainer" parent="Center/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Center/ScrollContainer/VBoxContainer/item3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_jjvhh")
+placeholder_text = "Option 3 . . ."
+
+[node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item3"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_icons/icon = ExtResource("5_kry3j")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_21xkr")
+
+[node name="Button" type="Button" parent="Center/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 48
+text = "+ Option "
+
 [node name="AnswerButton" type="Button" parent="Center"]
 offset_left = 60.0
 offset_top = 1650.0
@@ -90,14 +137,14 @@ offset_bottom = 1775.0
 theme_override_font_sizes/font_size = 56
 text = "ANSWER"
 
-[node name="ClearButton" type="Button" parent="Center"]
+[node name="ResetButton" type="Button" parent="Center"]
 offset_left = -360.0
 offset_top = 1650.0
 offset_right = -60.0
 offset_bottom = 1775.0
 theme_override_font_sizes/font_size = 56
-text = "CLEAR"
+text = "RESET"
 
-[connection signal="pressed" from="Center/InsertGroup/Button" to="." method="_on_add_item_pressed"]
+[connection signal="pressed" from="Center/ScrollContainer/VBoxContainer/Button" to="." method="_on_add_option_pressed"]
 [connection signal="pressed" from="Center/AnswerButton" to="." method="_on_answer_pressed"]
-[connection signal="pressed" from="Center/ClearButton" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Center/ResetButton" to="." method="_on_reset_pressed"]

@@ -5,3 +5,4 @@
 [resource]
 Button/icons/icon = ExtResource("1_ixn0w")
 Label/font_sizes/font_size = 62
+LineEdit/font_sizes/font_size = 42

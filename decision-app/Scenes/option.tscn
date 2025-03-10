@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn6vvgjdyom55"]
+
+[ext_resource type="Theme" uid="uid://jl4g7k5tpoup" path="res://Resources/Themes/ItemTheme.tres" id="1_hmytp"]
+[ext_resource type="Texture2D" uid="uid://dxkitmov6u7fi" path="res://Resources/Icons/trash-can-solid.svg" id="2_tx2dh"]
+[ext_resource type="Script" uid="uid://gf5hmi5w4ttt" path="res://Scripts/remove_button.gd" id="3_tx2dh"]
+
+[node name="Option" type="HBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_hmytp")
+placeholder_text = "Option 3 . . ."
+
+[node name="ClearButton" type="Button" parent="."]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_icons/icon = ExtResource("2_tx2dh")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_tx2dh")
