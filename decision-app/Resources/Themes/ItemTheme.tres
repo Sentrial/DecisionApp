@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://jl4g7k5tpoup"]
+
+[ext_resource type="Texture2D" uid="uid://dxkitmov6u7fi" path="res://Resources/Icons/trash-can-solid.svg" id="1_ixn0w"]
+
+[resource]
+Button/icons/icon = ExtResource("1_ixn0w")
+Label/font_sizes/font_size = 46

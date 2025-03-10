@@ -1,9 +1,67 @@
-[gd_scene format=3 uid="uid://btamp27jhjrtj"]
+[gd_scene load_steps=3 format=3 uid="uid://btamp27jhjrtj"]
+
+[ext_resource type="Script" uid="uid://b04yepgmue5f8" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dqppfkgr8w5kr" path="res://Resources/Icons/plus-solid.svg" id="2_bo1nx"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_jjgbg")
 
-[node name="Title" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(540, 0)
+
+[node name="Title" type="Label" parent="Center"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -379.5
+offset_top = 150.0
+offset_right = 379.5
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 110
 text = "DECISION APP"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InsertGroup" type="Node2D" parent="Center"]
+position = Vector2(0, 400)
+
+[node name="Button" type="Button" parent="Center/InsertGroup"]
+offset_left = 200.0
+offset_right = 275.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 50
+theme_override_icons/icon = ExtResource("2_bo1nx")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextEdit" type="TextEdit" parent="Center/InsertGroup"]
+offset_left = -275.0
+offset_right = 125.0
+offset_bottom = 75.0
+theme_override_colors/background_color = Color(0.564706, 0.890196, 0.603922, 1)
+theme_override_colors/font_placeholder_color = Color(0.313726, 0.313726, 0.313726, 0.811765)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+placeholder_text = "Option..."
+
+[node name="ItemsAndButtonsContainer" type="VBoxContainer" parent="Center"]
+offset_left = -360.0
+offset_top = 700.0
+offset_right = 360.0
+offset_bottom = 1700.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Center/ItemsAndButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/ItemsAndButtonsContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="Center/ItemsAndButtonsContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Center/InsertGroup/Button" to="." method="_on_add_item_pressed"]
