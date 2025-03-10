@@ -13,7 +13,9 @@ config_version=5
 config/name="Decision App"
 run/main_scene="uid://btamp27jhjrtj"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.92549, 0.709804, 0.792157, 1)
+config/icon="uid://dw8d4oc7xlb6a"
+config/windows_native_icon="res://Resources/Icons/DecisionAppIcon.ico"
 
 [display]
 
@@ -29,4 +31,5 @@ theme/custom_font="uid://bu6gkjyxnb0a6"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.923646, 0.710643, 0.791648, 1)
