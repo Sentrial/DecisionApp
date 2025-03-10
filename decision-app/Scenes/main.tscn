@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://btamp27jhjrtj"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "DECISION APP"
+horizontal_alignment = 1
