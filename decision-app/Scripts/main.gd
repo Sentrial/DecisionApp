@@ -1,9 +1,11 @@
 extends Node2D
 
-@onready var itemContainer = $Center/ItemsAndButtonsContainer/ScrollContainer/VBoxContainer
+@onready var itemContainer = $Center/ScrollContainer/VBoxContainer
 @onready var textEdit = $Center/InsertGroup/TextEdit
 @onready var itemTheme = load("res://Resources/Themes/ItemTheme.tres")
 @onready var trashIcon = load("res://Resources/Icons/trash-can-solid.svg")
+@onready var answerLabel = $Center/Answer
+@onready var glitterSFX = $Center/Answer/GlitterSFX
 var items = {}
 
 func _ready():
@@ -19,13 +21,13 @@ func _on_add_item_pressed():
 	var newItem = HBoxContainer.new()
 	newItem.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	
-	# Text
+	# Creat text
 	var itemText = Label.new()
 	itemText.text = textEdit.text
 	itemText.size_flags_horizontal = Control.SIZE_EXPAND
 	itemText.theme = itemTheme
 	
-	# Delete button
+	# Create delete button
 	var button = Button.new()
 	button.icon = trashIcon
 	button.expand_icon = true
@@ -41,7 +43,6 @@ func _on_add_item_pressed():
 	items[itemText.text] = true
 	
 	textEdit.text = ""
-	_on_answer_pressed()
 
 
 # Deletes the item from the list
@@ -53,8 +54,15 @@ func _on_delete_pressed(label: Label):
 # Generates a random answer
 func _on_answer_pressed():
 	var options = items.keys()
-	var answer = ""
+	var answer = "[center][b]. . .[/b][/center]"
 	if len(options) > 0:
-		answer = options[randi() % options.size()]
+		answer = "[center][b]" + options[randi() % options.size()] + "[/b][/center]"
+		glitterSFX.play()
 	
-	print(answer)
+	answerLabel.text = answer
+
+func _on_clear_pressed():
+	for child in itemContainer.get_children():
+		itemContainer.remove_child(child)
+		child.queue_free()
+	items.clear()
