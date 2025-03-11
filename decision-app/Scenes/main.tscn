@@ -20,14 +20,14 @@ position = Vector2(540, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -400.0
-offset_top = 225.0
-offset_right = 400.0
-offset_bottom = 425.0
+offset_left = -540.0
+offset_top = 175.0
+offset_right = 540.0
+offset_bottom = 375.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/bold_font_size = 115
+theme_override_font_sizes/bold_font_size = 145
 bbcode_enabled = true
 text = "[center][b]DECISION APP[/b][/center]"
 horizontal_alignment = 1
@@ -37,14 +37,14 @@ vertical_alignment = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -360.0
-offset_top = 475.0
-offset_right = 360.0
-offset_bottom = 625.0
+offset_left = -490.0
+offset_top = 400.0
+offset_right = 490.0
+offset_bottom = 700.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/bold_font_size = 76
+theme_override_font_sizes/bold_font_size = 130
 bbcode_enabled = true
 text = "[center][b]. . .[/b][/center]"
 fit_content = true
@@ -57,9 +57,9 @@ position = Vector2(360, 0)
 stream = SubResource("AudioStreamRandomizer_jjvhh")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Center"]
-offset_left = -360.0
+offset_left = -440.0
 offset_top = 700.0
-offset_right = 360.0
+offset_right = 440.0
 offset_bottom = 1600.0
 size_flags_vertical = 3
 
@@ -72,13 +72,14 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="Center/ScrollContainer/VBoxContainer/item1"]
+custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_jjvhh")
 placeholder_text = "Option 1 . . ."
 
 [node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item1"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_icons/icon = ExtResource("5_kry3j")
@@ -90,13 +91,14 @@ script = ExtResource("6_21xkr")
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="Center/ScrollContainer/VBoxContainer/item2"]
+custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_jjvhh")
 placeholder_text = "Option 2 . . ."
 
 [node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item2"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_icons/icon = ExtResource("5_kry3j")
@@ -108,13 +110,14 @@ script = ExtResource("6_21xkr")
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="Center/ScrollContainer/VBoxContainer/item3"]
+custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_jjvhh")
 placeholder_text = "Option 3 . . ."
 
 [node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item3"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_icons/icon = ExtResource("5_kry3j")
@@ -123,26 +126,26 @@ expand_icon = true
 script = ExtResource("6_21xkr")
 
 [node name="Button" type="Button" parent="Center/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 75)
+custom_minimum_size = Vector2(150, 125)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 86
 text = "+ Option "
 
 [node name="AnswerButton" type="Button" parent="Center"]
 offset_left = 60.0
 offset_top = 1650.0
-offset_right = 360.0
-offset_bottom = 1775.0
-theme_override_font_sizes/font_size = 56
+offset_right = 440.0
+offset_bottom = 1800.0
+theme_override_font_sizes/font_size = 86
 text = "ANSWER"
 
 [node name="ResetButton" type="Button" parent="Center"]
-offset_left = -360.0
+offset_left = -440.0
 offset_top = 1650.0
 offset_right = -60.0
-offset_bottom = 1775.0
-theme_override_font_sizes/font_size = 56
+offset_bottom = 1800.0
+theme_override_font_sizes/font_size = 86
 text = "RESET"
 
 [connection signal="pressed" from="Center/ScrollContainer/VBoxContainer/Button" to="." method="_on_add_option_pressed"]
