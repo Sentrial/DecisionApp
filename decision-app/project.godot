@@ -14,6 +14,7 @@ config/name="Decision App"
 run/main_scene="uid://btamp27jhjrtj"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.92549, 0.709804, 0.792157, 1)
+boot_splash/image="uid://dw8d4oc7xlb6a"
 config/icon="uid://dw8d4oc7xlb6a"
 config/windows_native_icon="res://Resources/Icons/DecisionAppIcon.ico"
 

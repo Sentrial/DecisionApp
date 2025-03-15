@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmmulrwt2oxij"]
+
+[ext_resource type="Script" uid="uid://cpfyfxmfgn1w5" path="res://Scenes/about.gd" id="1_vbrdd"]
+
+[node name="About" type="Node2D"]
+script = ExtResource("1_vbrdd")
+
+[node name="Text" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(1080, 1920)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 68
+theme_override_font_sizes/italics_font_size = 68
+theme_override_font_sizes/mono_font_size = 68
+theme_override_font_sizes/normal_font_size = 68
+theme_override_font_sizes/bold_font_size = 68
+bbcode_enabled = true
+text = "[b]Developed by Sentrial[/b]
+
+
+Godot License:
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GodotLicenseLink" type="LinkButton" parent="."]
+offset_left = 86.0
+offset_top = 1040.0
+offset_right = 994.0
+offset_bottom = 1100.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "https://godotengine.org/license/"
+uri = "https://godotengine.org/license/"
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 1400.0
+offset_right = 730.0
+offset_bottom = 1550.0
+theme_override_font_sizes/font_size = 86
+text = "HOME"
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://btamp27jhjrtj"]
+[gd_scene load_steps=8 format=3 uid="uid://btamp27jhjrtj"]
 
 [ext_resource type="Script" uid="uid://b04yepgmue5f8" path="res://Scripts/main.gd" id="1_jjgbg"]
 [ext_resource type="AudioStream" uid="uid://djkvvvyl5h337" path="res://Resources/Sounds/GlitterSFX-cut.mp3" id="3_8gbba"]
 [ext_resource type="Theme" uid="uid://jl4g7k5tpoup" path="res://Resources/Themes/ItemTheme.tres" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://dxkitmov6u7fi" path="res://Resources/Icons/trash-can-solid.svg" id="5_kry3j"]
+[ext_resource type="FontFile" uid="uid://bagjd1t08p2he" path="res://Resources/Fonts/Delius-Regular.ttf" id="6_6bp64"]
 [ext_resource type="Script" uid="uid://gf5hmi5w4ttt" path="res://Scripts/remove_button.gd" id="6_21xkr"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jjvhh"]
@@ -77,6 +78,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_jjvhh")
 placeholder_text = "Option 1 . . ."
+max_length = 128
 
 [node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item1"]
 custom_minimum_size = Vector2(130, 130)
@@ -96,6 +98,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_jjvhh")
 placeholder_text = "Option 2 . . ."
+max_length = 128
 
 [node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item2"]
 custom_minimum_size = Vector2(130, 130)
@@ -115,6 +118,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("4_jjvhh")
 placeholder_text = "Option 3 . . ."
+max_length = 128
 
 [node name="ClearButton" type="Button" parent="Center/ScrollContainer/VBoxContainer/item3"]
 custom_minimum_size = Vector2(130, 130)
@@ -148,6 +152,16 @@ offset_bottom = 1800.0
 theme_override_font_sizes/font_size = 86
 text = "RESET"
 
+[node name="AboutButton" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 1840.0
+offset_right = 80.0
+offset_bottom = 1900.0
+theme_override_fonts/font = ExtResource("6_6bp64")
+theme_override_font_sizes/font_size = 40
+text = "?"
+
 [connection signal="pressed" from="Center/ScrollContainer/VBoxContainer/Button" to="." method="_on_add_option_pressed"]
 [connection signal="pressed" from="Center/AnswerButton" to="." method="_on_answer_pressed"]
 [connection signal="pressed" from="Center/ResetButton" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="AboutButton" to="." method="_on_about_pressed"]
